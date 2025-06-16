@@ -1,6 +1,8 @@
 using System.Text.Json;
 using System.Xml.Linq;
 using TestReportGenerator.Models;
+using TestReportGenerator.Interfaces;
+using TestReportGenerator.Services;
 
 namespace TestReportGenerator;
 
@@ -163,7 +165,7 @@ public class ReportGeneratorCli
 
   // TODO: This method should be in a separate IReportGenerator service
   // It violates SRP and could benefit from Builder pattern
-  private void GenerateReport(List<TestResult> results, string sourceType)
+  GenerateReport(List<TestResult> results, string sourceType)
   {
     Console.WriteLine($"""
 
